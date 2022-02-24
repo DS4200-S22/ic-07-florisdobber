@@ -192,13 +192,13 @@ d3.csv("data/barchart.csv").then((data) => {
     .enter()
     .append("rect")
     .attr("class", "bar")
-    .attr("x", (d, i) => xScale1(i))
-    .attr("y", (d) => yScale1(d.score))
-    .attr("height", (d) => (height - margin.bottom) - yScale1(d.score))
-    .attr("width", xScale1.bandwidth())
-    .on("mouseover", mouseover1)
-    .on("mousemove", mousemove1)
-    .on("mouseleave", mouseleave1);
+    .attr("x", (d, i) => xScale2(i))
+    .attr("y", (d) => yScale2(d.score))
+    .attr("height", (d) => (height - margin.bottom) - yScale2(d.score))
+    .attr("width", xScale2.bandwidth())
+    .on("mouseover", mouseover2)
+    .on("mousemove", mousemove2)
+    .on("mouseleave", mouseleave2);
 });
 
 
@@ -210,8 +210,6 @@ const svg3 = d3
   .attr("viewBox", [0, 0, width, height]);
 
 d3.csv("data/scatter.csv").then((data) => {
-  console.log(data);
-
   // Set the y-axis max to the max value in the data
   let maxY3 = d3.max(data, function (d) { return d.score; });
 
